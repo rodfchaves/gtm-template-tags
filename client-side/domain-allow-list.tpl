@@ -1,3 +1,11 @@
+___TERMS_OF_SERVICE___
+
+By creating or modifying this file you agree to Google Tag Manager's Community
+Template Gallery Developer Terms of Service available at
+https://developers.google.com/tag-manager/gallery-tos (or such other URL as
+Google may provide), as modified from time to time.
+
+
 ___INFO___
 
 {
@@ -5,7 +13,7 @@ ___INFO___
   "id": "cvt_temp_public_id",
   "version": 1,
   "securityGroups": [],
-  "displayName": "Domain Allow List",
+  "displayName": "Allowed Domains\u0027 List",
   "description": "Use this variable to compare the hostname from your website with a list of one or more hostnames. If your hostname is in the list, returns true.\nMore:",
   "containerContexts": [
     "WEB"
@@ -36,9 +44,7 @@ ___TEMPLATE_PARAMETERS___
     "alwaysInSummary": false,
     "clearOnCopy": false,
     "defaultValue": "yourdomain.com",
-    "enablingConditions": [],
-    "help": "Enter the domains and/or subdomains that should be allowed to send events.",
-    "valueValidators": []
+    "help": "Enter the domains and/or subdomains that should be allowed to send events."
   }
 ]
 
@@ -51,16 +57,12 @@ const getUrl = require('getUrl');
 const makeTableMap = require('makeTableMap');
 const Object = require('Object');
 
-
 const domains = data.listDomains && data.listDomains.length ? data.listDomains : [];
 const arrayDomains = domains.map(item => item.Domain);
 
 let theUrl = getUrl();
 let parsedURL = parseUrl(theUrl);
 let hostname = parsedURL.hostname;
-//let hostname = data.hostname ? data.hostname : getEventData('page_hostname');
-//hostname.split('.').length > 2 ? hostname = (hostname.split('.')).slice(1).join('.') : "";
-logToConsole('hostname:' + hostname);
 
 return arrayDomains.indexOf(hostname) == -1 ? false : true;
 
@@ -138,6 +140,6 @@ scenarios:
 
 ___NOTES___
 
-Created on 6/13/2023, 3:31:21 PM
+Created on 6/13/2023, 4:48:08 PM
 
 
