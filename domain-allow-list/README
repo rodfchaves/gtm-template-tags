@@ -1,0 +1,11 @@
+GTM Tag: Allowed Domains' List
+Sometimes we have to deal with unwanted traffic from sites that sometimes we own and sometimes we do not. For example when someone just duplicates your website and does not even have the care of taking off your GTM code from it. 
+Sounds silly, but it happens more often than you think, and it can ruin your reports.
+For that I have created a variable template where you can simply list your domains and subdomains, reducing the workload and not having to rely on regex and other systems that can become a bit complicated to manage.
+It is quite simple:
+1. Download the template from:
+2. Import it to Google Tag Manager
+3. Add a list of domains and subdomains
+4. Create a variable using the template
+5. Use that variable in a trigger, every time the domain matches the Allowed Domains' List, it returns True, otherwise, it returns False.
+Hope it helps, if not, let me know and I will improve it.
